@@ -37,8 +37,7 @@ Data: 253,680 records, 15.8% positive (diabetes or prediabetes). Stratified 80/2
 | **Stacking Ensemble** | n/a (internal)  | 0.8076   |
 
 All models land at AUC around 0.80-0.81. Stacking does not meaningfully beat the single models,
-which suggests the lifestyle inputs, not model complexity, are the ceiling. Stacking is kept
-because its probabilities are better calibrated (see below).
+which suggests the lifestyle inputs, not model complexity, are the ceiling. Stacking's probabilities are well calibrated in the low-to-mid range (see below).
 
 **Stacking at the F1-optimal threshold (0.265):**
 
@@ -62,7 +61,7 @@ predicted risk of about 45% (predicted 25% -> observed ~23%). Above that the mod
 underestimates risk (predicted ~61% -> observed ~75%), and it rarely predicts above 60%.
 The hereditary multiplier is applied on top and is not itself validated.
 
-![Calibration](docs/calibration_curve.png)
+<img src="docs/calibration_curve.png" width="450" alt="Calibration curve">
 
 Feature importances (XGBoost) are in `docs/feature_importance.png`.
 
