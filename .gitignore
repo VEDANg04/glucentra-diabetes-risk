@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+.pytest_cache/
+.DS_Store
+
+# data and models are regenerated, not committed
+data/*.csv
+models/*.pkl
