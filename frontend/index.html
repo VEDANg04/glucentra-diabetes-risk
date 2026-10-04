@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Glucentra — ML Diabetes Risk Prediction</title>
+  <meta name="description" content="Predict your diabetes / prediabetes risk from lifestyle and hereditary factors. Powered by a stacking ensemble ML model trained on BRFSS 2015." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ── NAVBAR ─────────────────────────────────────────────────────── -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="#top" class="brand">
+        <span class="brand-mark">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+        </span>
+        <span class="brand-name">Glucentra</span>
+        <span class="brand-tag">ML Health</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#history">History</a>
+      </nav>
+      <a class="btn btn-primary nav-cta" href="#dashboard">Run prediction</a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ── HERO ───────────────────────────────────────────────────────── -->
+    <section class="hero">
+      <div class="hero-glow"></div>
+      <div class="container">
+        <span class="badge">
+          <span class="badge-dot"></span>
+          ML-powered diabetes risk scoring
+        </span>
+        <h1>Know your diabetes<br/><span class="h1-accent">risk score.</span></h1>
+        <p class="lede">
+          Glucentra combines lifestyle and hereditary signals to estimate your personal
+          diabetes / prediabetes risk — no blood tests, no clinic visit required.
+        </p>
+        <div class="hero-actions">
+          <a href="#dashboard" class="btn btn-primary btn-lg">
+            Predict my risk
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#about" class="btn btn-ghost btn-lg">Learn more</a>
+        </div>
+
+        <div class="hero-cards">
+          <div class="hero-card">
+            <span class="hero-card-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </span>
+            <h3>17 health inputs</h3>
+            <p>BMI, lifestyle habits, comorbidities and family history.</p>
+          </div>
+          <div class="hero-card">
+            <span class="hero-card-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </span>
+            <h3>0–100 risk score</h3>
+            <p>A single, clear percentage powered by a stacking ensemble model.</p>
+          </div>
+          <div class="hero-card">
+            <span class="hero-card-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </span>
+            <h3>Personalised tips</h3>
+            <p>Actionable suggestions based on your specific inputs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ABOUT ───────────────────────────────────────────────────────── -->
+    <section id="about" class="section section-alt">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-text">
+            <p class="eyebrow">About the model</p>
+            <h2>Predict risk without medical data.</h2>
+            <p class="body-text">
+              Glucentra is trained on the BRFSS 2015 dataset — a CDC survey of 250,000+
+              Americans. It uses only lifestyle and demographic information, so anyone
+              can assess their risk without a prior clinic visit.
+            </p>
+            <p class="body-text">
+              Hereditary risk is layered on top using relative-risk multipliers from
+              published epidemiological literature, so family history is properly
+              accounted for even though it wasn't in the original dataset.
+            </p>
+          </div>
+          <div class="stat-grid">
+            <div class="stat-card">
+              <span class="stat-value">0–100</span>
+              <span class="stat-label">Risk score range</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">17</span>
+              <span class="stat-label">Input features</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">250k+</span>
+              <span class="stat-label">Training records</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">5×</span>
+              <span class="stat-label">Cross-validated</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- How it works -->
+        <div class="how-it-works">
+          <p class="eyebrow" style="text-align:center;margin-bottom:32px;">How it works</p>
+          <div class="steps">
+            <div class="step">
+              <span class="step-num">1</span>
+              <h4>Fill in the form</h4>
+              <p>Enter your lifestyle habits, health history and family background.</p>
+            </div>
+            <div class="step-arrow">→</div>
+            <div class="step">
+              <span class="step-num">2</span>
+              <h4>Model runs</h4>
+              <p>A stacking ensemble (XGBoost + LightGBM + Random Forest) predicts your lifestyle risk.</p>
+            </div>
+            <div class="step-arrow">→</div>
+            <div class="step">
+              <span class="step-num">3</span>
+              <h4>Hereditary layer</h4>
+              <p>Your family history multiplies the risk using literature-backed relative-risk values.</p>
+            </div>
+            <div class="step-arrow">→</div>
+            <div class="step">
+              <span class="step-num">4</span>
+              <h4>Get your score</h4>
+              <p>See your final risk % and personalised suggestions to lower it.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── DASHBOARD ───────────────────────────────────────────────────── -->
+    <section id="dashboard" class="section">
+      <div class="container">
+        <p class="eyebrow" style="text-align:center">Risk prediction dashboard</p>
+        <h2 class="section-title">Run a prediction in seconds</h2>
+        <p class="section-lede">
+          Inputs are sent to the Python <code>/predict</code> endpoint.
+          The frontend never modifies values or computes risk independently.
+        </p>
+
+        <div class="dashboard">
+          <!-- FORM -->
+          <form id="predict-form" class="card form-card">
+            <div class="form-head">
+              <div>
+                <h3>Patient inputs</h3>
+                <p class="muted small">Values are sent to the backend exactly as entered.</p>
+              </div>
+              <span class="chip">17 features</span>
+            </div>
+            <div id="fields" class="fields"></div>
+
+            <div id="error" class="alert hidden"></div>
+
+            <div class="form-foot">
+              <p class="muted small">Endpoint: <code id="endpoint-display">POST /predict</code></p>
+              <div class="actions">
+                <button type="button" id="reset-btn" class="btn btn-ghost">Reset</button>
+                <button type="submit" id="submit-btn" class="btn btn-primary">
+                  <span class="btn-label">Run prediction</span>
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <!-- RESULTS -->
+          <aside id="results" class="card results empty">
+            <div class="empty-state">
+              <div class="empty-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              </div>
+              <h3>Awaiting prediction</h3>
+              <p class="muted">Fill in the inputs on the left and click <strong>Run prediction</strong>. Your risk score will appear here.</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── HISTORY ─────────────────────────────────────────────────────── -->
+    <section id="history" class="section section-alt">
+      <div class="container">
+        <p class="eyebrow" style="text-align:center">Prediction history</p>
+        <h2 class="section-title">Recent predictions</h2>
+        <p class="section-lede">A session log of results returned by <code>/predict</code>. Cleared when you close the tab.</p>
+
+        <div class="card history-card">
+          <div class="history-head">
+            <h3>Recent predictions</h3>
+            <button id="clear-history" class="btn btn-ghost small">Clear</button>
+          </div>
+          <div class="table-wrap">
+            <table id="history-table">
+              <thead>
+                <tr>
+                  <th>Time</th>
+                  <th>BMI</th>
+                  <th>Age</th>
+                  <th>Family history</th>
+                  <th class="num">Risk score</th>
+                  <th>Level</th>
+                </tr>
+              </thead>
+              <tbody id="history-body">
+                <tr class="empty-row"><td colspan="6">No predictions yet.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="brand-mark small">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+        </span>
+        <div>
+          <p class="footer-brand-name">Glucentra</p>
+          <p class="footer-brand-sub">ML-powered diabetes risk analytics</p>
+        </div>
+      </div>
+      <p class="footer-disclaimer">
+        This tool is for educational and research purposes only and does not replace
+        professional medical diagnosis. Always consult a qualified healthcare provider.
+      </p>
+      <p class="footer-copy">© <span id="year"></span> Glucentra Research. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
