@@ -71,7 +71,7 @@ Feature importances (XGBoost) are in `docs/feature_importance.png`.
 Built with **Python 3.14**. Dependency versions are pinned in `requirements.txt`.
 
 ```bash
-git clone <<YOUR-REPO-URL>> && cd glucentra-diabetes-risk
+git clone https://github.com/VEDANg04/glucentra-diabetes-risk.git && cd glucentra-diabetes-risk
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 brew install libomp            # macOS only, needed by LightGBM/XGBoost
